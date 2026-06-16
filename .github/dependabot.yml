@@ -16,7 +16,7 @@ updates:
       prefix: 'deps(backend)'
 
   - package-ecosystem: 'npm'
-    directory: '/apps/sisyphus-web'
+    directory: '/apps/web'
     schedule:
       interval: 'monthly'
     commit-message:

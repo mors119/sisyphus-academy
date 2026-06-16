@@ -36,30 +36,30 @@ The main release blockers were:
 | `docker-compose.prod.yml` | 76 | `IMAGE_PUBLIC_BASE` was derived from `APP_HOST`. | Use a dedicated environment variable for the public image base URL. |
 | `docker-compose.prod.yml` | 78-82 | Kakao secret variable support was incomplete in Compose. | Add `KAKAO_CLIENT_SECRET` passthrough so secrets stay in environment only. |
 | `docker-compose.prod.yml` | 91,101-102 | Web and Nginx images pointed at a personal image namespace and fixed platform. | Use configurable `WEB_IMAGE`, `NGINX_IMAGE`, and `NGINX_PLATFORM` variables. |
-| `backend/src/main/resources/application-prod.properties` | 46 | Mail sender name was hardcoded. | Allow override via `MAIL_FROM_NAME` environment variable. |
-| `backend/src/main/java/com/sisyphus/backend/global/config/OpenApiConfig.java` | 21 | OpenAPI server URL was hardcoded to localhost. | Read the public API URL from application configuration. |
-| `apps/sisyphus-web/public/locales/en/policy.md` | 10 | Personal contact email was committed in public-facing policy content. | Replace with a public support/privacy alias before release. |
-| `apps/sisyphus-web/public/locales/ko/policy.md` | 10 | Personal contact email was committed in public-facing policy content. | Replace with a public support/privacy alias before release. |
-| `.env.example` | 1-7 | Example env file did not cover the actual runtime variables used by Compose and the apps. | Expand `.env.example` to include all required backend, frontend, and deployment variables. |
+| `apps/api/src/main/resources/application-prod.properties` | 46 | Mail sender name was hardcoded. | Allow override via `MAIL_FROM_NAME` environment variable. |
+| `apps/api/src/main/java/com/sisyphus/backend/global/config/OpenApiConfig.java` | 21 | OpenAPI server URL was hardcoded to localhost. | Read the public API URL from application configuration. |
+| `apps/web/public/locales/en/policy.md` | 10 | Personal contact email was committed in public-facing policy content. | Replace with a public support/privacy alias before release. |
+| `apps/web/public/locales/ko/policy.md` | 10 | Personal contact email was committed in public-facing policy content. | Replace with a public support/privacy alias before release. |
+| `.env.example` | 1-7 | Example env file did not cover the actual runtime variables used by Compose and the apps. | Expand `.env.example` to include all required API, web, and deployment variables. |
 | `.gitignore` | 26-27 | `*.env.*` would also ignore `.env.example`. | Add an explicit `!.env.example` exception. |
-| `.gitignore` | overall | Ignore rules did not fully cover `.gradle`, nested `.idea`, frontend `dist`, or local frontend env files. | Add explicit ignore entries for generated and local-only artifacts. |
+| `.gitignore` | overall | Ignore rules did not fully cover `.gradle`, nested `.idea`, web `dist`, or local web env files. | Add explicit ignore entries for generated and local-only artifacts. |
 
 ## Local Files That Should Not Be Committed
 
 These files or directories are present in the workspace and should stay uncommitted:
 
 - `.env`
-- `apps/sisyphus-web/.env.development`
-- `backend/.gradle/`
-- `backend/build/`
-- `backend/.idea/`
-- `apps/sisyphus-web/dist/`
+- `apps/web/.env.development`
+- `apps/api/.gradle/`
+- `apps/api/build/`
+- `apps/api/.idea/`
+- `apps/web/dist/`
 - `**/.DS_Store`
 
 ## Changes Applied
 
 - Parameterized remaining Compose deployment values with environment variables.
-- Expanded `.env.example` to cover backend, frontend, OAuth, mail, Redis, image, and container image settings.
+- Expanded `.env.example` to cover API, web, OAuth, mail, Redis, image, and container image settings.
 - Updated OpenAPI server configuration to use the configured API host.
 - Replaced the personal policy contact email with a public placeholder.
 - Strengthened `.gitignore` for generated and local-only files.

@@ -1,15 +1,17 @@
-name: Backend CI
+name: API CI
 
 on:
   pull_request:
     paths:
-      - 'backend/**'
-
+      - 'apps/api/**'
+      - '.github/workflows/backend.yml'
   push:
     branches:
       - main
     paths:
-      - 'backend/**'
+      - 'apps/api/**'
+      - '.github/workflows/backend.yml'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: backend
+        working-directory: apps/api
 
     steps:
       - uses: actions/checkout@v6
@@ -29,7 +31,5 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v6
 
-      - name: Build
-        run: ./gradlew build
-
-    
+      - name: Run API tests
+        run: ./gradlew test

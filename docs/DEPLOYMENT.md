@@ -1,8 +1,6 @@
-# DEPLOYMENT.md
-
 # Deployment Guide
 
-This document explains how to run Sisyphus Academy locally using Docker.
+This document explains how to run Sisyphus Academy with Docker for both local development and image-based deployment.
 
 ## Requirements
 
@@ -38,25 +36,27 @@ Run:
 docker compose up -d
 ```
 
+This uses `docker-compose.yml`, which builds `apps/api` and `apps/web` from the local source tree.
+
 This starts:
 
 - PostgreSQL
 - Redis
-- Backend
-- Frontend
+- API
+- Web
 - Nginx
 
 ---
 
 ## Verify Services
 
-Frontend:
+Web:
 
 ```text
 http://localhost
 ```
 
-Backend API:
+API:
 
 ```text
 http://localhost/api
@@ -95,6 +95,14 @@ Migrations run automatically during application startup.
 ---
 
 ## Production Deployment
+
+For image-based deployment, use:
+
+```bash
+docker compose -f docker-compose.prod.yml up -d
+```
+
+`docker-compose.prod.yml` does not build local sources. It pulls the image references declared through `BACKEND_IMAGE`, `WEB_IMAGE`, and `NGINX_IMAGE`.
 
 Production deployments should:
 

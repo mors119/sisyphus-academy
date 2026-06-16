@@ -53,7 +53,7 @@ apps/sisyphus-extension/
 !backend/gradlew.bat
 
 /*.txt
-OPEN_SOURCE_CHECKLIST.m
+OPEN_SOURCE_CHECKLIST.md
 
 # Generated artifacts
 .gradle/

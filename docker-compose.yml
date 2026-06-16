@@ -34,7 +34,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./apps/api
       dockerfile: Dockerfile
     container_name: sisy-backend
     env_file:
@@ -45,7 +45,7 @@ services:
       redis:
         condition: service_healthy
     environment:
-      SPRING_PROFILES_ACTIVE: prod,oauth
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
 
       DB_URL: ${DB_URL}
       DB_USER: ${DB_USER}
@@ -88,7 +88,7 @@ services:
 
   web:
     build:
-      context: ./sisyphus-web
+      context: ./apps/web
       dockerfile: Dockerfile
     container_name: sisy-web
     depends_on:

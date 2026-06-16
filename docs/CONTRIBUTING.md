@@ -4,19 +4,27 @@ Thank you for contributing to Sisyphus Academy.
 
 ## Development Setup
 
-### Backend
+### API
 
 ```bash
-cd backend
+cd apps/api
 ./gradlew bootRun
 ```
 
-### Frontend
+### Web
 
 ```bash
-cd apps/sisyphus-web
+cd apps/web
 npm install
 npm run dev
+```
+
+### Chrome Extension
+
+```bash
+cd apps/chrome-extension
+bun install
+bun run build
 ```
 
 ### Pull Request Process

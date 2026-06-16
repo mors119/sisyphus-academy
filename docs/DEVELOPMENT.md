@@ -1,5 +1,3 @@
-# DEVELOPMENT.md
-
 # Development Guide
 
 This document explains how to develop Sisyphus Academy locally.
@@ -7,31 +5,32 @@ This document explains how to develop Sisyphus Academy locally.
 ## Project Structure
 
 ```text
-backend/
 apps/
-  sisyphus-web/
-chrome-extension/
+  api/
+  web/
+  chrome-extension/
+gateway/
 docs/
 ```
 
 ---
 
-## Backend
+## API
 
-Start backend:
+Start the API server:
 
 ```bash
-cd backend
+cd apps/api
 ./gradlew bootRun
 ```
 
-Build backend:
+Build the API:
 
 ```bash
 ./gradlew build
 ```
 
-Run tests:
+Run API tests:
 
 ```bash
 ./gradlew test
@@ -39,18 +38,18 @@ Run tests:
 
 ---
 
-## Frontend
+## Web
 
-Start frontend:
+Start the web app:
 
 ```bash
-cd apps/sisyphus-web
+cd apps/web
 
 npm install
 npm run dev
 ```
 
-Build frontend:
+Build the web app:
 
 ```bash
 npm run build
@@ -63,15 +62,31 @@ npm run build
 Install dependencies:
 
 ```bash
-cd chrome-extension
+cd apps/chrome-extension
 
-npm install
+bun install
 ```
 
 Build extension:
 
 ```bash
-npm run build
+bun run build
+```
+
+Type check extension sources:
+
+```bash
+bun run compile
+```
+
+---
+
+## Local Stack
+
+Start the full stack with Docker Compose:
+
+```bash
+docker compose up -d
 ```
 
 ---

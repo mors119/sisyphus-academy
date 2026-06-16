@@ -23,7 +23,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Profile({"local", "dev"})
 @Service
 @RequiredArgsConstructor
 public class DummyNoteSeedService {

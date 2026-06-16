@@ -1,6 +1,6 @@
 package com.sisyphus.backend.note.controller;
 
-import com.sisyphus.backend.note.dummy.DummyNoteSeedService;
+
 import com.sisyphus.backend.security.principal.UserPrincipal;
 import com.sisyphus.backend.global.dto.PageResponse;
 import com.sisyphus.backend.note.dto.NoteRequest;
@@ -28,7 +28,6 @@ import org.springframework.web.bind.annotation.*;
 public class NoteController {
 
     private final NoteService noteService;
-    private final DummyNoteSeedService dummyNoteSeedService;
 
     @Operation(
             summary = "노트 생성",
@@ -154,12 +153,4 @@ public class NoteController {
         return ResponseEntity.ok(notes);
     }
 
-
-    @PostMapping("/dummy")
-    public ResponseEntity<String> createDummyData(
-            @Parameter(hidden = true) @AuthenticationPrincipal UserPrincipal principal
-    ) {
-        int created = dummyNoteSeedService.seed(principal.getId());
-        return ResponseEntity.status(201).body("created=" + created);
-    }
 }

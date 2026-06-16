@@ -1,8 +1,6 @@
-# ARCHITECTURE.md
-
 # Sisyphus Academy
 
-Sisyphus Academy is a self-hosted vocabulary learning platform built with Spring Boot, React, PostgreSQL, Redis, and Docker.
+Sisyphus Academy is a self-hosted knowledge capture platform built with Spring Boot, React, a Chrome extension, PostgreSQL, Redis, and Docker.
 
 The project is designed with a clear separation between reusable platform infrastructure and academy-specific business logic.
 
@@ -12,7 +10,7 @@ The project is designed with a clear separation between reusable platform infras
 
 ```text
 ┌─────────────────────────┐
-│ React Frontend          │
+│ Web App / Extension     │
 └───────────┬─────────────┘
             │
             ▼
@@ -32,9 +30,9 @@ The project is designed with a clear separation between reusable platform infras
 
 ---
 
-# Backend Architecture
+# API Architecture
 
-The backend is divided into two conceptual layers.
+The API application lives in `apps/api` and is divided into two conceptual layers.
 
 ## Platform Layer
 
@@ -124,25 +122,35 @@ Responsible for:
 
 ---
 
-# Frontend Architecture
+# Web Architecture
 
-The frontend follows a feature-oriented structure.
+The web application lives in `apps/web` and follows a feature-oriented structure.
 
 ```text
 src/
+├── app/
 ├── features/
-├── pages/
-├── shared/
-├── api/
 └── components/
 ```
 
 Guidelines:
 
 - Business logic belongs to features.
-- Shared UI components belong to shared.
-- API clients should remain isolated.
+- Routing and application bootstrapping belong to `app/`.
+- Shared UI components belong to `components/`.
 - Feature modules should avoid direct coupling.
+
+---
+
+# Chrome Extension Architecture
+
+The browser extension lives in `apps/chrome-extension`.
+
+Its code is organized around WXT entrypoints such as:
+
+- `entrypoints/background.ts`
+- `entrypoints/popup/`
+- `public/`
 
 ---
 
@@ -150,8 +158,8 @@ Guidelines:
 
 ## Containers
 
-- frontend
-- backend
+- web
+- api
 - postgres
 - redis
 - nginx

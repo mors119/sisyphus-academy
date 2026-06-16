@@ -17,9 +17,9 @@
 
 ## CI/CD
 
-- [ ] Backend CI
-- [ ] Frontend CI
-- [ ] Extension CI
+- [ ] API CI
+- [ ] Web CI
+- [ ] Chrome Extension CI
 - [ ] CodeQL
 - [ ] Dependabot
 

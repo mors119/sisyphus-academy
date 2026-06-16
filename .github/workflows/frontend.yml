@@ -1,15 +1,17 @@
-name: Frontend CI
+name: Web CI
 
 on:
   pull_request:
     paths:
-      - 'apps/sisyphus-web/**'
-
+      - 'apps/web/**'
+      - '.github/workflows/frontend.yml'
   push:
     branches:
       - main
     paths:
-      - 'apps/sisyphus-web/**'
+      - 'apps/web/**'
+      - '.github/workflows/frontend.yml'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: apps/sisyphus-web
+        working-directory: apps/web
 
     steps:
       - uses: actions/checkout@v6
@@ -25,6 +27,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build web app
+        run: npm run build

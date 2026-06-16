@@ -27,6 +27,9 @@ jobs:
       - uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
+          paths-ignore: |
+            **/test/**
+            **/src/test/**
 
       - uses: github/codeql-action/autobuild@v4
 

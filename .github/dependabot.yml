@@ -1,0 +1,30 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: 'deps(ci)'
+
+  - package-ecosystem: 'gradle'
+    directory: '/backend'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: 'deps(backend)'
+
+  - package-ecosystem: 'npm'
+    directory: '/apps/sisyphus-web'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: 'deps(web)'
+
+  - package-ecosystem: 'npm'
+    directory: '/chrome-extension'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: 'deps(extension)'

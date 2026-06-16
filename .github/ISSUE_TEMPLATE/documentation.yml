@@ -1,0 +1,15 @@
+name: Documentation
+description: Documentation improvement
+labels:
+  - documentation
+
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: Documentation Issue
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested Improvement

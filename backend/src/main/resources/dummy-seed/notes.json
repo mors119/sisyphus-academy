@@ -1,0 +1,148 @@
+{
+  "notes":[
+    {
+      "image": "monkey.jpg",
+      "title": "원숭이",
+      "subTitle": "monkey",
+      "description": "monkey는 라틴어와 프랑스어 계통의 단어에서 유래했으며, 나무를 잘 타는 영장류를 의미한다.",
+      "tags": [
+        "바나나",
+        "정글",
+        "동물원"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "tiger.jpg",
+      "title": "호랑이",
+      "subTitle": "tiger",
+      "description": "tiger는 힘과 용맹함의 상징으로, 주로 아시아 지역에 서식하는 대형 고양잇과 동물이다.",
+      "tags": [
+        "맹수",
+        "줄무늬",
+        "야생"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "elephant.jpg",
+      "title": "코끼리",
+      "subTitle": "elephant",
+      "description": "elephant는 긴 코와 큰 몸집이 특징이며, 뛰어난 기억력을 가진 동물로 알려져 있다.",
+      "tags": [
+        "큰귀",
+        "초식동물",
+        "사바나"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "penguin.jpg",
+      "title": "펭귄",
+      "subTitle": "penguin",
+      "description": "penguin은 날지 못하지만 수영에 특화된 조류로, 주로 남극과 남반구에 서식한다.",
+      "tags": [
+        "남극",
+        "수영",
+        "새"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "dog.jpg",
+      "title": "개",
+      "subTitle": "dog",
+      "description": "dog는 인간과 가장 오래 함께해 온 동물로, 충성심과 사회성이 매우 뛰어나다.",
+      "tags": [
+        "반려동물",
+        "충성",
+        "가족"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "cat.jpg",
+      "title": "고양이",
+      "subTitle": "cat",
+      "description": "cat은 독립적인 성향을 가진 포유류로, 민첩한 움직임과 예민한 감각이 특징이다.",
+      "tags": [
+        "반려동물",
+        "야행성",
+        "귀여움"
+      ],
+      "category": "동물"
+    },
+    {
+      "image": "rose.jpg",
+      "title": "장미",
+      "subTitle": "rose",
+      "description": "rose는 사랑과 아름다움의 상징으로, 다양한 색과 향을 가진 꽃이다.",
+      "tags": [
+        "꽃",
+        "사랑",
+        "향기"
+      ],
+      "category": "식물"
+    },
+    {
+      "image": "sunflower.jpg",
+      "title": "해바라기",
+      "subTitle": "sunflower",
+      "description": "sunflower는 태양을 따라 움직이는 성질이 있으며, 밝고 긍정적인 이미지를 가진 식물이다.",
+      "tags": [
+        "태양",
+        "노란색",
+        "여름"
+      ],
+      "category": "식물"
+    },
+    {
+      "image": "pine_tree.jpg",
+      "title": "소나무",
+      "subTitle": "pine tree",
+      "description": "pine tree는 사계절 푸른 잎을 유지하는 상록수로, 오래됨과 절개를 상징한다.",
+      "tags": [
+        "상록수",
+        "침엽수",
+        "자연"
+      ],
+      "category": "식물"
+    },
+    {
+      "image": "cactus.jpg",
+      "title": "선인장",
+      "subTitle": "cactus",
+      "description": "cactus는 건조한 환경에서도 살아남는 강한 생명력을 가진 식물이다.",
+      "tags": [
+        "사막",
+        "가시",
+        "강인함"
+      ],
+      "category": "식물"
+    },
+    {
+      "image": "bamboo.jpg",
+      "title": "대나무",
+      "subTitle": "bamboo",
+      "description": "bamboo는 빠른 성장 속도와 유연함으로 절제와 성실함을 상징한다.",
+      "tags": [
+        "성장",
+        "숲",
+        "아시아"
+      ],
+      "category": "식물"
+    },
+    {
+      "image": "lotus.jpg",
+      "title": "연꽃",
+      "subTitle": "lotus",
+      "description": "lotus는 진흙 속에서도 깨끗하게 피어나는 꽃으로, 순수함과 깨달음을 상징한다.",
+      "tags": [
+        "연못",
+        "불교",
+        "청정"
+      ],
+      "category": "식물"
+    }
+  ]
+}

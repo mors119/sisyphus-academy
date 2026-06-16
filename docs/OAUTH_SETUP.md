@@ -1,0 +1,84 @@
+# OAUTH_SETUP.md
+
+# OAuth Setup
+
+Sisyphus Academy supports:
+
+- Google Login
+- Naver Login
+- Kakao Login
+
+OAuth credentials must never be committed.
+
+Store them only in local or deployment environment files.
+
+---
+
+# Google
+
+Create an OAuth application.
+
+Required variables:
+
+```env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+Redirect URI:
+
+```text
+http://localhost/login/oauth2/code/google
+```
+
+Production:
+
+```text
+https://your-domain.com/login/oauth2/code/google
+```
+
+---
+
+# Naver
+
+Required variables:
+
+```env
+NAVER_CLIENT_ID=
+NAVER_CLIENT_SECRET=
+```
+
+Redirect URI:
+
+```text
+http://localhost/login/oauth2/code/naver
+```
+
+---
+
+# Kakao
+
+Required variables:
+
+```env
+KAKAO_CLIENT_ID=
+KAKAO_CLIENT_SECRET=
+```
+
+Redirect URI:
+
+```text
+http://localhost/login/oauth2/code/kakao
+```
+
+---
+
+# Security Notes
+
+Do not:
+
+- Commit OAuth credentials
+- Share OAuth credentials publicly
+- Store OAuth credentials in source code
+
+Always use environment variables.

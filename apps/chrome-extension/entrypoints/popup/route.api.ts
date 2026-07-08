@@ -19,8 +19,9 @@ api.interceptors.request.use(async (config) => {
   const token =
     useAuthStore.getState().accessToken ||
     (await new Promise<string | null>((r) =>
-      chrome.storage.local.get('accessToken', (res) =>
-        r(res.accessToken ?? null),
+      chrome.storage.local.get<{ accessToken?: string }>(
+        'accessToken',
+        (res) => r(res.accessToken ?? null),
       ),
     ));
 

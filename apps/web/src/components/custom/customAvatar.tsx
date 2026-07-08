@@ -21,8 +21,8 @@ export const CustomAvatar = ({ user }: CustomAvatarProps) => {
         <Avatar className="border border-sisy">
           <AvatarFallback className="border border-sis dark:text-[#ffcd49] group-hover:dark:bg-[#1186ce]">
             {user.name
-              ? user.name.at(0)?.toUpperCase()
-              : user.email.at(0)?.toUpperCase()}
+              ? user.name.charAt(0).toUpperCase()
+              : user.email.charAt(0).toUpperCase()}
           </AvatarFallback>
         </Avatar>
       </div>

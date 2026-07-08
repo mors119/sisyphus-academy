@@ -41,11 +41,14 @@ export const useNoteHook = () => {
   });
 
   useEffect(() => {
-    chrome.storage.local.get('selectedWord', (res) => {
-      if (res.selectedWord) {
-        setValue('title', res.selectedWord);
-      }
-    });
+    chrome.storage.local.get<{ selectedWord?: string }>(
+      'selectedWord',
+      (res) => {
+        if (res.selectedWord) {
+          setValue('title', res.selectedWord);
+        }
+      },
+    );
   }, [setValue]);
 
   const onSubmit = (data: NoteRequest) => createNoteMutation.mutate(data);

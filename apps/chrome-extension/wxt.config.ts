@@ -5,10 +5,10 @@ const isDev =
   process.env.WXT_DEV === 'true' || process.env.WXT_MODE === 'development';
 
 export default defineConfig({
-  extensionApi: 'chrome',
+  browser: 'chrome',
+  manifestVersion: 3,
   modules: ['@wxt-dev/module-react'],
   manifest: {
-    manifest_version: 3,
     name: '어디서든지 사용 가능한 단어장 Sisyphus-Word-Extension',
     version: '1.0',
     default_locale: 'en',
